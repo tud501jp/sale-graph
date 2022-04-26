@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>売上可視化のシステム</title>
+
+    <!-- Bootstrapのファイル読み込み -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrapの日本語フォントを変換する外部ファイルの読み込み -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/jpn.css@latest/dist/bootstrap/jpn.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- sidebar start -->
+        <nav
+          class="col-md-2 d-none d-md-block bg-light sidebar"
+          style="height: 100vh"
+        >
+          <div class="mt-3 sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <div class="nav-link">
+                  <img
+                    src="https://web-source.kikagaku.net/logo_kikagaku.png"
+                    style="max-width: 100px"
+                  />
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-bar-chart-2 mr-2"
+                  >
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                  Year Report
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-shopping-cart mr-2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                  Department
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- sidebar end -->
+        <!-- main content start -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Year Report</h1>
+          </div>
+          <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+          <!-- 追記 -->
+          <div class="text-center">
+            <h1 class="h2">利益率が10%を超えた月</h1>
+            <p id="profit-rate-high-month"></p>
+          </div>
+        </main>
+        <!-- main content end -->
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+      integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
